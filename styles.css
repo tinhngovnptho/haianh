@@ -1,0 +1,159 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body, html {
+	height: 100%;
+	background-color: #ff69b4; /* Màu nền hồng */
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin: 0;
+	font-family: 'Arial', sans-serif;
+	overflow: hidden; /* Ngừng cuộn trang khi có nhiều phần tử trang trí */
+}
+
+.container {
+	position: relative;
+	width: 100%;
+	height: 100%;
+	max-width: 1000px;
+	max-height: 1000px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	padding: 20px; /* Thêm khoảng cách bên trong container */
+}
+
+video {
+	width: 80%;
+	height: auto;
+	z-index: 1;
+	border-radius: 15px; /* Bo góc video */
+	box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1); /* Thêm bóng mờ cho video */
+	transition: transform 0.3s ease, box-shadow 0.3s ease; /* Thêm hiệu ứng chuyển đổi */
+}
+
+video:hover {
+	transform: scale(1.05); /* Phóng to video khi hover */
+	box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2); /* Tăng bóng mờ khi hover */
+}
+
+.decorations {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	pointer-events: none; /* Để không ảnh hưởng đến các phần tử khác */
+	z-index: 2; /* Đảm bảo các phần tử trang trí nằm trên video */
+}
+
+.heart {
+	position: absolute;
+	width: 50px;
+	height: 50px;
+	background-image: url('heart.png'); /* Đường dẫn đến hình ảnh trái tim */
+	background-size: cover;
+	animation: float 5s infinite ease-in-out;
+}
+
+.heart.top-left {
+	top: 5%;
+	left: 5%;
+}
+
+.heart.top-right {
+	top: 5%;
+	right: 5%;
+}
+
+.heart.bottom-left {
+	bottom: 5%;
+	left: 5%;
+}
+
+.heart.bottom-right {
+	bottom: 5%;
+	right: 5%;
+}
+
+.cherry {
+	position: absolute;
+	width: 40px;
+	height: 40px;
+	background-image: url('cherry.png'); /* Đường dẫn đến hình ảnh trái cherry */
+	background-size: cover;
+	animation: float 5s infinite ease-in-out;
+	z-index: 3; /* Đảm bảo các trái cherry nằm trên các phần tử khác */
+}
+
+.cherry.top-left {
+	top: 15%;
+	left: 15%;
+}
+
+.cherry.top-right {
+	top: 15%;
+	right: 15%;
+}
+
+.cherry.bottom-left {
+	bottom: 15%;
+	left: 15%;
+}
+
+.cherry.bottom-right {
+	bottom: 15%;
+	right: 15%;
+}
+
+.valentine-text {
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	font-size: 2rem;
+	color: #ff69b4; /* Màu hồng dễ thương */
+	font-family: 'Comic Sans MS', cursive, sans-serif;
+	z-index: 4; /* Đảm bảo chữ nằm trên các phần tử khác */
+}
+
+.valentine-text.left {
+	left: -10%; /* Dịch ra ngoài video */
+}
+
+.valentine-text.right {
+	right: -10%; /* Dịch ra ngoài video */
+}
+
+.cute-icon {
+	position: absolute;
+	width: 50px;
+	height: 50px;
+	background-size: cover;
+	z-index: 4; /* Đảm bảo biểu tượng nằm trên các phần tử khác */
+}
+
+.cute-icon.left {
+	top: 40%;
+	left: -5%; /* Dịch ra ngoài video */
+	background-image: url('cute-icon-left.png'); /* Đường dẫn đến biểu tượng dễ thương bên trái */
+}
+
+.cute-icon.right {
+	top: 40%;
+	right: -5%; /* Dịch ra ngoài video */
+	background-image: url('cute-icon-right.png'); /* Đường dẫn đến biểu tượng dễ thương bên phải */
+}
+
+@keyframes float {
+	0%, 100% {
+			transform: translateY(0);
+	}
+	50% {
+			transform: translateY(-20px);
+	}
+}
